@@ -2,13 +2,13 @@
 Simple tool to merge two GPX tracks together.
 
 Usage:
-    gpxmerge foo.gpx bar.gpx baz.gpx ...
+    gpxmerge [--rename='My GPX Name'] --output=output.gpx foo.gpx bar.gpx baz.gpx
 
 Appends any tracks in bar.gpx, baz.gpx to those in foo.gpx, and writes out as
-test.gpx; the metadata comes from the first specified file.
+the output.gpx; the metadata comes from the first specified file but with an
+updated name.
 
 To do:
-* Allow setting the output filename
 * Look into whether any other components should be merged as well as the tracks.
 * Configurability for other usecases.
 
