@@ -1,13 +1,13 @@
 use gpx::Gpx;
-use structopt::StructOpt;
+use clap::Parser;
 
-#[derive(Debug,StructOpt)]
-#[structopt(name = "gpxmerge", about = "GPX merging tool")]
+#[derive(Debug,clap::Parser)]
+#[clap(name = "gpxmerge", about = "GPX merging tool")]
 pub struct Opts {
-    #[structopt(short = "R", long = "rename")]
+    #[clap(short = 'R', long = "rename")]
     rename: Option<String>,
 
-    #[structopt(short = "o", long = "output")]
+    #[clap(short = 'o', long = "output")]
     output: String,
 
     files: Vec<String>,
@@ -20,7 +20,7 @@ fn open_gpx(s: &str) -> Gpx {
 }
 
 fn main() {
-    let opt = Opts::from_args();
+    let opt = Opts::parse();
     let mut gpx = open_gpx(&opt.files[0]);
     println!("Opened a gpx");
     assert!(gpx.tracks.len() == 1);
