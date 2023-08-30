@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 gpx = "0.9"
-clap = { version = "3", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
